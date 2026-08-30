@@ -65,9 +65,13 @@ export default function App() {
 
         {/* 2. Main AI Simulation Section */}
         <section ref={simRef} className="pt-6">
-          {/* Scenario Picker Pill Bar */}
-          <div className="flex flex-col items-center justify-center space-y-4 mb-8 text-center">
-            <div className="inline-flex items-center p-1.5 rounded-2xl glass-card border border-slate-800 bg-navy-950/80 shadow-glass-glow">
+          {/* AI Lab Header */}
+          <div className="ai-panel px-4 sm:px-8 py-7 sm:py-9 mb-8 text-center">
+            <div className="relative z-10">
+              <div className="ai-section-label mb-3">01 / Interactive AI Lab</div>
+              <h2 className="text-2xl sm:text-4xl font-display font-bold tracking-tight text-white">Choose a system. <span className="text-cyan-400">Watch it think.</span></h2>
+              <p className="mt-3 mb-6 text-sm text-slate-400 max-w-2xl mx-auto">Each simulation reveals a simplified decision pipeline—from raw input to a confidence-backed output.</p>
+              <div className="inline-flex max-w-full overflow-x-auto items-center p-1.5 rounded-2xl glass-card border border-slate-800 bg-navy-950/80 shadow-glass-glow">
               <button
                 onClick={() => setActiveScenario('spam')}
                 className={`flex items-center gap-2 px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
@@ -103,6 +107,7 @@ export default function App() {
                 <Film className="w-4 h-4" />
                 <span>Movie Recommender</span>
               </button>
+              </div>
             </div>
           </div>
 
