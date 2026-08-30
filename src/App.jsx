@@ -54,9 +54,9 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="relative z-10 space-y-16 sm:space-y-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <main className="relative z-10 space-y-20 sm:space-y-32 px-0 max-w-none mx-auto">
         {/* 1. Hero Section */}
-        <div ref={heroRef}>
+        <div ref={heroRef} className="w-full">
           <HeroSection
             onTrySimulation={() => scrollToSection('simulation')}
             onExploreHowItWorks={() => scrollToSection('fundamentals')}
@@ -64,7 +64,7 @@ export default function App() {
         </div>
 
         {/* 2. Main AI Simulation Section */}
-        <section ref={simRef} className="pt-6">
+        <section ref={simRef} className="pt-6 px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto">
           {/* AI Lab Header */}
           <div className="ai-panel px-4 sm:px-8 py-7 sm:py-9 mb-8 text-center">
             <div className="relative z-10">
@@ -120,33 +120,33 @@ export default function App() {
         </section>
 
         {/* 3. Real-time Dynamic Input Playground */}
-        <section ref={playgroundRef}>
+        <section ref={playgroundRef} className="px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto">
           <DynamicPlayground />
         </section>
 
         {/* 4. Human vs AI Prediction */}
-        <div ref={humanVsAiRef}>
+        <div ref={humanVsAiRef} className="px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto">
           <HumanVsAISection />
         </div>
 
         {/* 5. How AI Learns */}
-        <HowAILearnsSection />
+        <div className="px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto"><HowAILearnsSection /></div>
 
         {/* 6. AI Bias Demo */}
-        <div ref={biasRef}>
+        <div ref={biasRef} className="px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto">
           <AIBiasDemo />
         </div>
 
         {/* 7. Understand AI in 30 Seconds (Educational Cards) */}
-        <div ref={fundamentalsRef}>
+        <div ref={fundamentalsRef} className="px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto">
           <EducationalCards />
         </div>
 
         {/* 8. AI Is Not Magic */}
-        <AINotMagicSection />
+        <div className="px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto"><AINotMagicSection /></div>
 
         {/* 9. Final Black Box Message */}
-        <BlackBoxFinale onRunAnother={() => scrollToSection('simulation')} />
+        <div className="px-4 sm:px-8 lg:px-14 max-w-[1600px] mx-auto"><BlackBoxFinale onRunAnother={() => scrollToSection('simulation')} /></div>
       </main>
 
       {/* Comprehensive Footer */}
