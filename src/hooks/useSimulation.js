@@ -20,6 +20,7 @@ export function useSimulation(totalSteps = 6) {
 
   const timerRef = useRef(null);
   const startTimeRef = useRef(null);
+  const elapsedTimeRef = useRef(0);
 
   const getStageDuration = useCallback((step, currentSpeed) => {
     const baseDurations = {
@@ -91,17 +92,23 @@ export function useSimulation(totalSteps = 6) {
     };
   }, [isPlaying, currentStep, speed, totalSteps, advanceStep, getStageDuration]);
 
-  // Elapsed time tracker while playing
+  // Keep a stable elapsed-time reference so the interval is not recreated every tick.
   useEffect(() => {
-    let interval;
-    if (isPlaying) {
-      const start = Date.now() - elapsedTime * 1000;
-      interval = setInterval(() => {
-        setElapsedTime(Number(((Date.now() - start) / 1000).toFixed(1)));
-      }, 100);
-    }
+    elapsedTimeRef.current = elapsedTime;
+  }, [elapsedTime]);
+
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    startTimeRef.current = Date.now() - elapsedTimeRef.current * 1000;
+    const interval = setInterval(() => {
+      const nextElapsed = Number(((Date.now() - startTimeRef.current) / 1000).toFixed(1));
+      elapsedTimeRef.current = nextElapsed;
+      setElapsedTime(nextElapsed);
+    }, 100);
+
     return () => clearInterval(interval);
-  }, [isPlaying, elapsedTime]);
+  }, [isPlaying]);
 
   const start = () => {
     setIsCompleted(false);
