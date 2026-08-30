@@ -35,7 +35,7 @@ export default function HumanVsAISection() {
     <section className="py-12">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Section Heading */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-3 ai-panel py-8 px-5"><div className="relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/40">
             <Brain className="w-3.5 h-3.5" />
             Cognitive Comparison
@@ -46,12 +46,13 @@ export default function HumanVsAISection() {
           <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
             AI does not “think” or experience the world like a human. It calculates probabilities based on statistical patterns learned from vast datasets.
           </p>
+          </div>
         </div>
 
         {/* Side-by-side Fundamental Difference Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Human Thinking Card */}
-          <div className="p-6 rounded-3xl glass-card border border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.1)] space-y-4">
+          <div className="p-6 rounded-3xl glass-card-interactive border border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.1)] space-y-4">
             <div className="flex items-center gap-3">
               <div className="p-3 rounded-2xl bg-blue-500/20 text-blue-400 border border-blue-500/40">
                 <User className="w-6 h-6" />
@@ -81,7 +82,7 @@ export default function HumanVsAISection() {
           </div>
 
           {/* AI Prediction Card */}
-          <div className="p-6 rounded-3xl glass-card border border-cyan-500/30 shadow-[0_0_30px_rgba(0,240,255,0.1)] space-y-4">
+          <div className="p-6 rounded-3xl glass-card-interactive border border-cyan-500/30 shadow-[0_0_30px_rgba(0,240,255,0.1)] space-y-4">
             <div className="flex items-center gap-3">
               <div className="p-3 rounded-2xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/40">
                 <Cpu className="w-6 h-6" />
@@ -112,7 +113,7 @@ export default function HumanVsAISection() {
         </div>
 
         {/* Interactive Scenario Tabs */}
-        <div className="p-6 rounded-3xl glass-card border border-slate-800 space-y-5">
+        <div className="p-6 sm:p-8 rounded-3xl ai-panel space-y-5">
           <div className="flex items-center justify-between border-b border-slate-800 pb-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
               Interactive Scenario Breakdown
