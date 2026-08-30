@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Sliders, ArrowRight, ShieldAlert, ShieldCheck, Zap, Plus, X } from 'lucide-react';
+import { Sliders, ShieldAlert, ShieldCheck, Plus, Activity, Radar } from 'lucide-react';
 import { analyzeSpam } from '../engine/spamEngine';
 
 const QUICK_INJECTIONS = [
@@ -25,15 +25,15 @@ export default function DynamicPlayground() {
   };
 
   return (
-    <div className="p-8 rounded-3xl glass-card border border-cyan-500/20 shadow-glass-glow space-y-6">
+    <div className="ai-panel p-5 sm:p-8 space-y-6">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
+      <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.07] pb-5">
         <div>
           <div className="flex items-center gap-2">
             <span className="p-1.5 rounded-lg bg-cyan-500/20 text-cyan-400">
               <Sliders className="w-4 h-4" />
             </span>
-            <h3 className="text-xl font-bold font-display text-white">
+            <div className="ai-section-label mb-2">Live Experiment / Adaptive Input</div><h3 className="text-xl sm:text-2xl font-bold font-display text-white">
               Change the Input. Change the AI Decision.
             </h3>
           </div>
@@ -79,12 +79,12 @@ export default function DynamicPlayground() {
           onChange={(e) => setText(e.target.value)}
           rows={3}
           placeholder="Start typing your own email or sentence..."
-          className="w-full bg-navy-950 text-slate-100 placeholder-slate-500 text-sm p-4 rounded-2xl border border-slate-700 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all font-sans"
+          className="w-full min-h-32 bg-black/30 text-slate-100 placeholder-slate-500 text-sm p-4 rounded-2xl border border-slate-700 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none transition-all font-sans"
         />
       </div>
 
       {/* Real-time Dynamic Results Bar */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
         {/* Dynamic Prediction Badge */}
         <div className={`p-4 rounded-2xl border flex items-center justify-between ${
           analysis.prediction === 'SPAM'
@@ -94,7 +94,7 @@ export default function DynamicPlayground() {
             : 'bg-emerald-950/40 border-emerald-500/50 text-emerald-200'
         }`}>
           <div>
-            <span className="text-[10px] font-mono uppercase text-slate-400 block">Instant AI Prediction</span>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">AI Verdict</span>
             <span className="text-xl font-bold font-display tracking-wide">{analysis.prediction}</span>
           </div>
           {analysis.prediction === 'SPAM' ? (
@@ -123,14 +123,14 @@ export default function DynamicPlayground() {
         {/* Dynamic Detected Triggers */}
         <div className="p-4 rounded-2xl bg-navy-950/80 border border-slate-800 flex items-center justify-between">
           <div>
-            <span className="text-[10px] font-mono uppercase text-slate-400 block">High-Weight Triggers</span>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">Pattern Radar</span>
             <span className="text-sm font-semibold text-slate-200">
               {analysis.detectedFeatures.length > 0 
                 ? `${analysis.detectedFeatures.length} Patterns Detected`
                 : 'Zero Suspicious Patterns'}
             </span>
           </div>
-          <span className="text-xs font-mono text-cyan-300 font-bold bg-cyan-950/90 px-2 py-1 rounded border border-cyan-500/30">
+          <Radar className="w-4 h-4 text-cyan-400 mr-2" /><span className="text-xs font-mono text-cyan-300 font-bold bg-cyan-950/90 px-2 py-1 rounded border border-cyan-500/30">
             {analysis.spamScore}% Spam Score
           </span>
         </div>
