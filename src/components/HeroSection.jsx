@@ -1,74 +1,52 @@
 import React from 'react';
-import { Play, Sparkles, BrainCircuit, Compass, Activity, Network } from 'lucide-react';
+import { ArrowDownRight, Play } from 'lucide-react';
 
 export default function HeroSection({ onTrySimulation, onExploreHowItWorks }) {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-20 pb-12 overflow-hidden">
-      <div className="absolute inset-0 grid-pattern opacity-60 pointer-events-none" />
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[min(72vw,760px)] h-[min(72vw,760px)] rounded-full border border-cyan-400/10 animate-pulse-ring pointer-events-none" />
-      {/* Ambient background glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
+    <section className="look-hero relative min-h-[100svh] flex items-end overflow-hidden px-0">
+      <div className="look-hero-orb look-orb-a" />
+      <div className="look-hero-orb look-orb-b" />
+      <div className="look-hero-grid" />
 
-      <div className="relative z-10 max-w-5xl mx-auto space-y-7">
-        {/* Theme pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-cyan-500/40 text-cyan-300 text-xs font-mono tracking-wider uppercase shadow-[0_0_20px_rgba(0,240,255,0.2)] animate-float">
-          <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>AI Operating System · Live Visualization</span>
+      <div className="relative z-10 w-full px-5 sm:px-8 lg:px-14 pb-10 sm:pb-14">
+        <div className="flex items-center justify-between border-t border-white/20 pt-4 mb-7 text-[10px] sm:text-xs font-mono tracking-[0.18em] uppercase text-white/55">
+          <span>01 — Explore Intelligence</span>
+          <span className="hidden sm:block">Interactive AI Experience</span>
+          <span>2026</span>
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black font-display tracking-tight text-white leading-none">
-          Inside the <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 text-glow-cyan">AI Mind</span>
-        </h1>
-
-        {/* Subheading */}
-        <h2 className="text-lg sm:text-2xl font-bold text-slate-200 font-display">
-          Watch intelligence happen.<br className="hidden sm:block" /> <span className="text-slate-400">Before the answer.</span>
-        </h2>
-
-        {/* Description */}
-        <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
-          Step inside the decision pipeline. Feed an AI input and watch data transform into patterns, confidence, and a final prediction.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <button
-            onClick={onTrySimulation}
-            className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-slate-950 font-extrabold text-base tracking-wide shadow-[0_0_30px_rgba(0,240,255,0.6)] hover:shadow-[0_0_40px_rgba(0,240,255,0.9)] transition-all transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-2.5"
-          >
-            <Play className="w-5 h-5 fill-current" />
-            <span>Enter the AI Mind</span>
-          </button>
-
-          <button
-            onClick={onExploreHowItWorks}
-            className="w-full sm:w-auto px-7 py-4 rounded-2xl glass-card hover:bg-slate-800/80 text-slate-200 hover:text-white border border-slate-700 hover:border-cyan-500/50 font-bold text-base transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
-          >
-            <Compass className="w-5 h-5 text-cyan-400" />
-            <span>Explore the System</span>
-          </button>
+        <div className="max-w-7xl">
+          <p className="look-kicker mb-5">Not magic. A machine in motion.</p>
+          <h1 className="look-display leading-[0.82] tracking-[-0.075em] text-white">
+            INSIDE<br />
+            THE <span className="look-outline">AI</span><br />
+            MIND<span className="text-cyan-300">.</span>
+          </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 pt-2 text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider">
-          <span className="flex items-center gap-1.5"><Activity className="w-3.5 h-3.5 text-cyan-400" /> Live Processing</span>
-          <span className="hidden sm:block text-slate-700">•</span>
-          <span className="flex items-center gap-1.5"><Network className="w-3.5 h-3.5 text-purple-400" /> Interactive Neural Flow</span>
-          <span className="hidden sm:block text-slate-700">•</span>
-          <span className="flex items-center gap-1.5"><BrainCircuit className="w-3.5 h-3.5 text-blue-400" /> Learn by Exploring</span>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-7 items-end border-t border-white/10 pt-6">
+          <p className="max-w-md text-sm sm:text-base leading-relaxed text-white/60">
+            Follow the signal from raw input to final decision. Watch patterns form,
+            confidence rise, and intelligence make its move.
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            <button onClick={onTrySimulation} className="look-primary-btn group">
+              <span className="relative z-10 flex items-center gap-3">
+                <Play className="w-4 h-4 fill-current" />
+                ENTER THE MIND
+                <ArrowDownRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" />
+              </span>
+            </button>
+            <button onClick={onExploreHowItWorks} className="look-secondary-btn">
+              EXPLORE SYSTEM
+            </button>
+          </div>
         </div>
 
-        {/* 5-Stage Preview Chips */}
-        <div className="pt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono">
-          <span className="px-3 py-1.5 rounded-xl bg-navy-950/80 border border-slate-800 text-slate-300">Input</span>
-          <span className="text-cyan-500">→</span>
-          <span className="px-3 py-1.5 rounded-xl bg-navy-950/80 border border-slate-800 text-slate-300">Feature Detection</span>
-          <span className="text-cyan-500">→</span>
-          <span className="px-3 py-1.5 rounded-xl bg-navy-950/80 border border-slate-800 text-slate-300">Pattern Analysis</span>
-          <span className="text-cyan-500">→</span>
-          <span className="px-3 py-1.5 rounded-xl bg-navy-950/80 border border-slate-800 text-slate-300">Confidence</span>
-          <span className="text-cyan-500">→</span>
-          <span className="px-3 py-1.5 rounded-xl bg-cyan-950/80 border border-cyan-500/50 text-cyan-300 font-bold">Decision</span>
+        <div className="mt-10 flex items-center gap-3 text-[10px] sm:text-xs font-mono tracking-widest uppercase text-white/35">
+          <span className="w-12 h-px bg-cyan-300/70" />
+          Scroll to enter
         </div>
       </div>
     </section>
