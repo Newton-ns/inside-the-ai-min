@@ -173,18 +173,20 @@ export default function NeuralCoreCanvas({ isProcessing = false, currentStep = 0
   }, [isProcessing, currentStep]);
 
   return (
-    <div className="relative w-full h-64 md:h-72 rounded-2xl glass-card border border-cyan-500/20 shadow-glass-glow flex flex-col justify-between p-4 overflow-hidden">
+    <div className="relative w-full h-72 md:h-80 rounded-[1.75rem] ai-panel flex flex-col justify-between p-4 sm:p-5 overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent" />
       {/* Header bar */}
-      <div className="flex items-center justify-between z-10">
+      <div className="relative flex items-center justify-between z-10">
         <div className="flex items-center gap-2">
           <div className={`p-1.5 rounded-lg ${isProcessing ? 'bg-cyan-500/20 text-cyan-400 animate-pulse' : 'bg-slate-800 text-slate-400'}`}>
             <Cpu className="w-4 h-4" />
           </div>
           <div>
-            <h4 className="text-xs font-mono font-bold tracking-wider text-slate-200 uppercase">
+            <div className="ai-section-label text-[9px] mb-0.5">Neural Telemetry</div><h4 className="text-xs font-mono font-bold tracking-wider text-slate-100 uppercase">
               Neural Processing Core
             </h4>
-            <p className="text-[10px] text-slate-400 font-mono">Dense 4-Layer Feedforward Topology</p>
+            <p className="text-[10px] text-slate-400 font-mono">4 LAYERS · 17 NODES · LIVE SIGNAL FLOW</p>
           </div>
         </div>
 
@@ -197,12 +199,12 @@ export default function NeuralCoreCanvas({ isProcessing = false, currentStep = 0
       </div>
 
       {/* Center Canvas */}
-      <div className="relative flex-1 w-full my-2">
+      <div className="relative z-10 flex-1 w-full my-2">
         <canvas ref={canvasRef} className="w-full h-full block" />
       </div>
 
       {/* Live Status Message Bar */}
-      <div className="z-10 px-3.5 py-2 rounded-xl bg-navy-950/80 border border-slate-800 flex items-center justify-between text-xs font-mono">
+      <div className="relative z-10 px-3.5 py-2.5 rounded-2xl bg-black/30 border border-white/[0.07] flex items-center justify-between text-xs font-mono backdrop-blur">
         <div className="flex items-center gap-2 text-cyan-300">
           <span className={`w-2 h-2 rounded-full ${isProcessing ? 'bg-cyan-400 animate-ping' : 'bg-slate-600'}`} />
           <span className="truncate">{statusMessage || 'Awaiting activation trigger'}</span>
