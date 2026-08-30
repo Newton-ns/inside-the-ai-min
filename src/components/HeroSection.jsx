@@ -1,17 +1,19 @@
 import React from 'react';
-import { Play, Sparkles, ArrowDown, Cpu, ShieldCheck, Layers, Compass } from 'lucide-react';
+import { Play, Sparkles, BrainCircuit, Compass, Activity, Network } from 'lucide-react';
 
 export default function HeroSection({ onTrySimulation, onExploreHowItWorks }) {
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 pt-20 pb-12 overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-60 pointer-events-none" />
+      <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[min(72vw,760px)] h-[min(72vw,760px)] rounded-full border border-cyan-400/10 animate-pulse-ring pointer-events-none" />
       {/* Ambient background glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/20 via-blue-600/15 to-purple-600/20 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto space-y-6">
+      <div className="relative z-10 max-w-5xl mx-auto space-y-7">
         {/* Theme pill */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-cyan-500/40 text-cyan-300 text-xs font-mono tracking-wider uppercase shadow-[0_0_20px_rgba(0,240,255,0.2)] animate-float">
           <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Theme: Visualizing the Invisible</span>
+          <span>AI Operating System · Live Visualization</span>
         </div>
 
         {/* Main Heading */}
@@ -21,12 +23,12 @@ export default function HeroSection({ onTrySimulation, onExploreHowItWorks }) {
 
         {/* Subheading */}
         <h2 className="text-lg sm:text-2xl font-bold text-slate-200 font-display">
-          What really happens before AI gives you an answer?
+          Watch intelligence happen.<br className="hidden sm:block" /> <span className="text-slate-400">Before the answer.</span>
         </h2>
 
         {/* Description */}
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
-          Give AI an input and watch how it detects patterns, calculates confidence, and makes a decision.
+          Step inside the decision pipeline. Feed an AI input and watch data transform into patterns, confidence, and a final prediction.
         </p>
 
         {/* Action Buttons */}
@@ -36,7 +38,7 @@ export default function HeroSection({ onTrySimulation, onExploreHowItWorks }) {
             className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-slate-950 font-extrabold text-base tracking-wide shadow-[0_0_30px_rgba(0,240,255,0.6)] hover:shadow-[0_0_40px_rgba(0,240,255,0.9)] transition-all transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-2.5"
           >
             <Play className="w-5 h-5 fill-current" />
-            <span>Try AI Simulation</span>
+            <span>Enter the AI Mind</span>
           </button>
 
           <button
@@ -44,8 +46,16 @@ export default function HeroSection({ onTrySimulation, onExploreHowItWorks }) {
             className="w-full sm:w-auto px-7 py-4 rounded-2xl glass-card hover:bg-slate-800/80 text-slate-200 hover:text-white border border-slate-700 hover:border-cyan-500/50 font-bold text-base transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
           >
             <Compass className="w-5 h-5 text-cyan-400" />
-            <span>Explore How It Works</span>
+            <span>Explore the System</span>
           </button>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-3 pt-2 text-[10px] sm:text-xs font-mono text-slate-400 uppercase tracking-wider">
+          <span className="flex items-center gap-1.5"><Activity className="w-3.5 h-3.5 text-cyan-400" /> Live Processing</span>
+          <span className="hidden sm:block text-slate-700">•</span>
+          <span className="flex items-center gap-1.5"><Network className="w-3.5 h-3.5 text-purple-400" /> Interactive Neural Flow</span>
+          <span className="hidden sm:block text-slate-700">•</span>
+          <span className="flex items-center gap-1.5"><BrainCircuit className="w-3.5 h-3.5 text-blue-400" /> Learn by Exploring</span>
         </div>
 
         {/* 5-Stage Preview Chips */}
