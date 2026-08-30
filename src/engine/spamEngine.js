@@ -81,6 +81,17 @@ export function tokenizeText(text) {
   });
 }
 
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^\${}()|[\]\\]/g, '\\/**
+ * Evaluates text and extracts features, confidence, reasons, and node activation states
+ */');
+}
+
+function countMatches(text, keyword) {
+  const pattern = new RegExp(`\\\\b${escapeRegExp(keyword)}\\\\b`, 'gi');
+  return (text.match(pattern) || []).length;
+}
+
 /**
  * Evaluates text and extracts features, confidence, reasons, and node activation states
  */
@@ -110,14 +121,10 @@ export function analyzeSpam(text) {
   SPAM_PATTERNS.forEach(group => {
     group.keywords.forEach(kw => {
       const kwLower = kw.toLowerCase();
-      if (lowerText.includes(kwLower)) {
-        // Count occurrences
-        const regex = new RegExp(`\\b${kwLower.replace('$', '\\$')}\\b`, 'gi');
-        const matches = lowerText.match(regex);
-        const count = matches ? matches.length : 1;
-        
+      const count = countMatches(lowerText, kwLower);
+      if (count > 0) {
         detectedFeatures.push({
-          id: `feat-${kw}-${Math.random()}`,
+          id: `feat-${group.category}-${kwLower}`,
           keyword: kw.toUpperCase(),
           category: group.category,
           color: group.color,
