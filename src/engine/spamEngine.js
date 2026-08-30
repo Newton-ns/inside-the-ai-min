@@ -82,7 +82,15 @@ export function tokenizeText(text) {
 }
 
 function escapeRegExp(value) {
-  return value.replace(/[.*+?^\${}()|[\]\\]/g, '\\/**
+  return value.replace(/[.*+?^\${}()|[\]\\]/g, '\\$&');
+}
+
+function countMatches(text, keyword) {
+  const pattern = new RegExp(\`\\b${escapeRegExp(keyword)}\\b\`, 'gi');
+  return (text.match(pattern) || []).length;
+}
+
+/**
  * Evaluates text and extracts features, confidence, reasons, and node activation states
  */');
 }
