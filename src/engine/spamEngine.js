@@ -86,17 +86,7 @@ function escapeRegExp(value) {
 }
 
 function countMatches(text, keyword) {
-  const pattern = new RegExp('\\\\b' + escapeRegExp(keyword) + '\\\\b', 'gi');
-  return (text.match(pattern) || []).length;
-}
-
-/**
- * Evaluates text and extracts features, confidence, reasons, and node activation states
- */');
-}
-
-function countMatches(text, keyword) {
-  const pattern = new RegExp(`\\\\b${escapeRegExp(keyword)}\\\\b`, 'gi');
+  const pattern = new RegExp('\\b' + escapeRegExp(keyword) + '\\b', 'gi');
   return (text.match(pattern) || []).length;
 }
 
