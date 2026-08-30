@@ -138,6 +138,12 @@ export default function Navbar({ activeScenario, onSelectScenario, onNavClick })
             >
               AI Bias
             </button>
+            <button
+              onClick={() => { onNavClick('fundamentals'); setMobileMenuOpen(false); }}
+              className="p-2 rounded-lg bg-navy-900 text-slate-300 text-left"
+            >
+              Fundamentals
+            </button>
           </div>
         </div>
       )}
