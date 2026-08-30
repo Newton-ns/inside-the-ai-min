@@ -86,7 +86,7 @@ function escapeRegExp(value) {
 }
 
 function countMatches(text, keyword) {
-  const pattern = new RegExp(\`\\b${escapeRegExp(keyword)}\\b\`, 'gi');
+  const pattern = new RegExp('\\\\b' + escapeRegExp(keyword) + '\\\\b', 'gi');
   return (text.match(pattern) || []).length;
 }
 
