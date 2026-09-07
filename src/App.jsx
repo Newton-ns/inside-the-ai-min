@@ -22,33 +22,29 @@ export default function App() {
     <AuthProvider>
       <LanguageProvider>
         <BrowserRouter>
-          <div className="min-h-screen bg-[#030712] text-slate-100 flex flex-col selection:bg-amber-500/30 selection:text-amber-200">
-            {/* Gov-Tech Sticky Header */}
+          <div className="min-h-screen bg-[#050505] text-slate-100 flex flex-col selection:bg-lime-500/30 selection:text-lime-100">
             <Header onOpenVoiceAssistant={() => setShowVoiceAssistant(true)} />
 
-            {/* Main Application Routes */}
-            <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <main className="flex-1 w-full">
               <Routes>
                 <Route path="/" element={<LandingPage />} />
-                <Route path="/scanner" element={<ScannerPage />} />
-                <Route path="/inspector" element={<InspectorDashboard />} />
-                <Route path="/manufacturer" element={<ManufacturerDashboard />} />
-                <Route path="/admin" element={<AdminDashboard />} />
-                <Route path="/consumer" element={<ConsumerScanPage />} />
-                <Route path="/rules" element={<RulesCatalogPage />} />
-                <Route path="/verify" element={<PublicVerifyPage />} />
-                <Route path="/verify/:id" element={<PublicVerifyPage />} />
+                <Route path="/scanner" element={<div className="page-shell"><ScannerPage /></div>} />
+                <Route path="/inspector" element={<div className="page-shell"><InspectorDashboard /></div>} />
+                <Route path="/manufacturer" element={<div className="page-shell"><ManufacturerDashboard /></div>} />
+                <Route path="/admin" element={<div className="page-shell"><AdminDashboard /></div>} />
+                <Route path="/consumer" element={<div className="page-shell"><ConsumerScanPage /></div>} />
+                <Route path="/rules" element={<div className="page-shell"><RulesCatalogPage /></div>} />
+                <Route path="/verify" element={<div className="page-shell"><PublicVerifyPage /></div>} />
+                <Route path="/verify/:id" element={<div className="page-shell"><PublicVerifyPage /></div>} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
 
-            {/* AI Voice Assistant Modal */}
             <VoiceInspectionAssistant
               isOpen={showVoiceAssistant}
               onClose={() => setShowVoiceAssistant(false)}
             />
 
-            {/* Directorate Footer */}
             <Footer />
           </div>
         </BrowserRouter>
