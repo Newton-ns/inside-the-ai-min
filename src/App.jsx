@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
@@ -18,13 +18,21 @@ import { PublicVerifyPage } from './pages/PublicVerifyPage';
 
 export default function App() {
   const [showVoiceAssistant, setShowVoiceAssistant] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    try { return localStorage.getItem('legalmetrology-theme') === 'light' ? 'light' : 'dark'; } catch { return 'dark'; }
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem('legalmetrology-theme', theme); } catch {}
+    document.documentElement.style.colorScheme = theme;
+  }, [theme]);
 
   return (
     <AuthProvider>
       <LanguageProvider>
         <BrowserRouter>
-          <div className="min-h-screen bg-[#050505] text-slate-100 flex flex-col selection:bg-lime-500/30 selection:text-lime-100">
-            <Header onOpenVoiceAssistant={() => setShowVoiceAssistant(true)} />
+          <div className={`min-h-screen flex flex-col ${theme === 'light' ? 'theme-light' : 'theme-dark'}`}>
+            <Header theme={theme} onToggleTheme={() => setTheme((value) => value === 'dark' ? 'light' : 'dark')} onOpenVoiceAssistant={() => setShowVoiceAssistant(true)} />
             <main className="flex-1 w-full">
               <Routes>
                 <Route path="/" element={<LandingPage />} />
