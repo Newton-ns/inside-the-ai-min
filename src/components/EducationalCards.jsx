@@ -54,7 +54,7 @@ export default function EducationalCards() {
   return (
     <section className="py-12">
       <div className="max-w-6xl mx-auto space-y-8">
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-3 ai-panel py-8 px-5"><div className="relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
             <Sparkles className="w-3.5 h-3.5" />
             Core Fundamentals
@@ -65,6 +65,7 @@ export default function EducationalCards() {
           <p className="text-sm sm:text-base text-slate-400 max-w-xl mx-auto">
             Demystifying the 5 foundational building blocks that power modern machine learning.
           </p>
+          </div>
         </div>
 
         {/* 5 Cards Grid */}
@@ -77,6 +78,9 @@ export default function EducationalCards() {
               <div
                 key={card.title}
                 onClick={() => toggleCard(idx)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleCard(idx); } }}
                 className={`p-5 rounded-3xl glass-card-interactive border cursor-pointer flex flex-col justify-between transition-all duration-300 ${
                   isExpanded ? 'border-cyan-400 bg-navy-950 shadow-[0_0_20px_rgba(0,240,255,0.2)]' : 'border-slate-800'
                 }`}

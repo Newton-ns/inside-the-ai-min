@@ -16,9 +16,9 @@ export default function AIBiasDemo() {
 
   return (
     <section className="py-12">
-      <div className="max-w-5xl mx-auto p-8 rounded-3xl glass-card border border-cyan-500/20 shadow-glass-glow space-y-8">
+      <div className="max-w-5xl mx-auto p-5 sm:p-8 rounded-3xl ai-panel space-y-8">
         {/* Header */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-3 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/40">
             <AlertTriangle className="w-3.5 h-3.5" />
             Dataset Representation Simulator
@@ -32,7 +32,7 @@ export default function AIBiasDemo() {
         </div>
 
         {/* Interactive Bias Slider */}
-        <div className="p-6 rounded-2xl bg-navy-950/80 border border-slate-800 space-y-4">
+        <div className="p-6 rounded-2xl glass-card border border-slate-700/60 space-y-4 relative z-10">
           <div className="flex items-center justify-between text-xs font-mono">
             <span className="text-emerald-400 font-bold flex items-center gap-1.5">
               <Scale className="w-4 h-4" />
@@ -60,7 +60,7 @@ export default function AIBiasDemo() {
         </div>
 
         {/* Visualized Dataset Imbalance vs Error Rate */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
           {/* Dataset Composition Bar */}
           <div className="p-5 rounded-2xl bg-navy-950/60 border border-slate-800 space-y-3">
             <div className="flex items-center justify-between text-xs font-mono">
@@ -122,7 +122,7 @@ export default function AIBiasDemo() {
         </div>
 
         {/* Educational Takeaway Callout */}
-        <div className="p-4 rounded-2xl bg-navy-950 border border-slate-800 text-center text-xs text-slate-300">
+        <div className="p-5 rounded-2xl glass-card border border-amber-500/20 text-center text-xs text-slate-300 relative z-10">
           <strong className="text-cyan-300">Core Takeaway:</strong> An AI model does not have objective universal knowledge. If the training data contains sampling bias, the mathematical weights will faithfully reproduce and amplify that bias.
         </div>
       </div>

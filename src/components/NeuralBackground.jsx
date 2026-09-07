@@ -38,7 +38,6 @@ export default function NeuralBackground({ interactive = true }) {
 
     // Node & Particle setup
     let nodes = [];
-    const numNodes = Math.min(65, Math.floor((width * height) / 18000));
 
     class Node {
       constructor(x, y) {
@@ -67,7 +66,7 @@ export default function NeuralBackground({ interactive = true }) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < mouse.radius) {
+          if (dist > 0 && dist < mouse.radius) {
             const force = (mouse.radius - dist) / mouse.radius;
             this.x += (dx / dist) * force * 0.8;
             this.y += (dy / dist) * force * 0.8;
@@ -119,6 +118,7 @@ export default function NeuralBackground({ interactive = true }) {
     let signals = [];
 
     function initNodes() {
+      const numNodes = Math.min(65, Math.floor((width * height) / 18000));
       nodes = [];
       for (let i = 0; i < numNodes; i++) {
         nodes.push(new Node());

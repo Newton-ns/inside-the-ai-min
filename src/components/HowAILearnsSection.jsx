@@ -51,7 +51,7 @@ export default function HowAILearnsSection() {
     <section className="py-12">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-3 ai-panel py-8 px-5"><div className="relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
             <BookOpen className="w-3.5 h-3.5" />
             Machine Learning Lifecycle
@@ -62,6 +62,7 @@ export default function HowAILearnsSection() {
           <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto">
             Before AI can make predictions, it learns statistical patterns from large amounts of training data.
           </p>
+          </div>
         </div>
 
         {/* Animated Horizontal Stepper Flow */}
@@ -76,8 +77,8 @@ export default function HowAILearnsSection() {
                 onClick={() => setActiveStep(idx)}
                 className={`p-4 rounded-2xl border text-left transition-all relative overflow-hidden flex flex-col justify-between ${
                   isCurrent
-                    ? 'bg-navy-950 border-cyan-400 shadow-[0_0_20px_rgba(0,240,255,0.25)] scale-102'
-                    : 'bg-navy-950/60 border-slate-800 hover:border-slate-700'
+                    ? 'glass-card-glow border-cyan-400 shadow-[0_0_24px_rgba(0,240,255,0.2)] scale-[1.02]'
+                    : 'glass-card border-slate-800 hover:border-slate-600'
                 }`}
               >
                 <div>

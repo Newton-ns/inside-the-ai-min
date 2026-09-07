@@ -1,10 +1,11 @@
 import React from 'react';
-import { Cpu, ShieldCheck, Heart, Terminal, Sparkles } from 'lucide-react';
+import { Cpu, ShieldCheck, Sparkles, Activity } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800/80 bg-navy-950/90 py-12 px-4 relative z-10">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+    <footer className="border-t border-cyan-500/10 bg-navy-950/90 py-12 px-4 relative z-10 overflow-hidden">
+      <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
+      <div className="max-w-7xl mx-auto relative flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         {/* Brand & Theme */}
         <div className="space-y-2">
           <div className="flex items-center justify-center md:justify-start gap-2">
@@ -33,7 +34,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
-        <span>© 2026 Inside the AI Mind. Built for deep AI transparency.</span>
+        <span className="flex items-center gap-2"><Activity className="w-3 h-3 text-emerald-400" /> SYSTEM ONLINE · © 2026 Inside the AI Mind</span>
         <span className="flex items-center gap-1">
           Crafted with <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> for presentation excellence.
         </span>
