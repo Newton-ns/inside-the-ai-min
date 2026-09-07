@@ -4,17 +4,17 @@ import { User, UserRole } from '../types';
 interface AuthContextType {
   currentUser: User | null;
   isAuthenticated: boolean;
-  login: (email: string, password: string, role: UserRole) => boolean;
+  login: (identifier: string, password: string, role: UserRole) => boolean;
   logout: () => void;
   switchRole: (role: UserRole) => void;
   setUser: (user: User) => void;
 }
 
 const defaultUsers: Record<UserRole, User> = {
-  inspector: { id: 'usr_inspector_1', name: 'Rajesh Kumar, LMO', email: 'inspector@lm.gov.in', role: 'inspector', designation: 'Legal Metrology Officer, District Central Delhi', badgeNumber: 'DL-LM-4402' },
-  manufacturer: { id: 'usr_mfg_1', name: 'Vikram Singhania', email: 'mfg@shantiagro.in', role: 'manufacturer', company: 'Shanti Agro Foods Pvt. Ltd.', designation: 'Head of Packaging & Regulatory Affairs' },
-  admin: { id: 'usr_admin_1', name: 'Dr. Ananya Sharma', email: 'admin@lm.nic.in', role: 'admin', designation: 'Director General, Legal Metrology Division' },
-  consumer: { id: 'usr_consumer_1', name: 'Pooja Verma', email: 'consumer@example.com', role: 'consumer', designation: 'Verified Citizen Consumer' }
+  inspector: { id: 'LMO-DL-4402', name: 'Rajesh Kumar, LMO', email: 'inspector@lm.gov.in', role: 'inspector', designation: 'Legal Metrology Officer, District Central Delhi', badgeNumber: 'DL-LM-4402' },
+  manufacturer: { id: 'MFG-SAF-1027', name: 'Vikram Singhania', email: 'mfg@shantiagro.in', role: 'manufacturer', company: 'Shanti Agro Foods Pvt. Ltd.', designation: 'Head of Packaging & Regulatory Affairs' },
+  admin: { id: 'ADM-NAT-0012', name: 'Dr. Ananya Sharma', email: 'admin@lm.nic.in', role: 'admin', designation: 'Director General, Legal Metrology Division' },
+  consumer: { id: 'CON-2026-0184', name: 'Pooja Verma', email: 'consumer@example.com', role: 'consumer', designation: 'Verified Citizen Consumer' }
 };
 
 const DEMO_PASSWORD = 'demo123';
@@ -30,9 +30,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   });
 
-  const login = (email: string, password: string, role: UserRole) => {
+  const login = (identifier: string, password: string, role: UserRole) => {
     const user = defaultUsers[role];
-    const success = !!user && user.email.toLowerCase() === email.toLowerCase() && password === DEMO_PASSWORD;
+    const value = identifier.trim().toLowerCase();
+    const validIdentifier = user.id.toLowerCase() === value || user.email.toLowerCase() === value || user.badgeNumber?.toLowerCase() === value;
+    const success = !!user && validIdentifier && password === DEMO_PASSWORD;
     if (success) {
       setCurrentUser(user);
       try { localStorage.setItem('legalmetrology-role', role); } catch {}
