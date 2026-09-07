@@ -18,8 +18,12 @@ import { PublicVerifyPage } from './pages/PublicVerifyPage';
 
 export default function App() {
   const [showVoiceAssistant, setShowVoiceAssistant] = useState(false);
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    try { return localStorage.getItem('legalmetrology-theme') === 'light' ? 'light' : 'dark'; } catch { return 'dark'; }
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem('legalmetrology-theme') === 'light' ? 'light' : 'dark';
+    } catch {
+      return 'dark';
+    }
   });
 
   useEffect(() => {
@@ -32,7 +36,11 @@ export default function App() {
       <LanguageProvider>
         <BrowserRouter>
           <div className={`min-h-screen flex flex-col ${theme === 'light' ? 'theme-light' : 'theme-dark'}`}>
-            <Header theme={theme} onToggleTheme={() => setTheme((value) => value === 'dark' ? 'light' : 'dark')} onOpenVoiceAssistant={() => setShowVoiceAssistant(true)} />
+            <Header
+              theme={theme}
+              onToggleTheme={() => setTheme((value) => value === 'dark' ? 'light' : 'dark')}
+              onOpenVoiceAssistant={() => setShowVoiceAssistant(true)}
+            />
             <main className="flex-1 w-full">
               <Routes>
                 <Route path="/" element={<LandingPage />} />
