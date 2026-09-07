@@ -5,6 +5,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { VoiceInspectionAssistant } from './components/voice/VoiceInspectionAssistant';
+import './classic.css';
 
 import { LandingPage } from './pages/LandingPage';
 import { ScannerPage } from './pages/ScannerPage';
@@ -24,7 +25,6 @@ export default function App() {
         <BrowserRouter>
           <div className="min-h-screen bg-[#050505] text-slate-100 flex flex-col selection:bg-lime-500/30 selection:text-lime-100">
             <Header onOpenVoiceAssistant={() => setShowVoiceAssistant(true)} />
-
             <main className="flex-1 w-full">
               <Routes>
                 <Route path="/" element={<LandingPage />} />
@@ -39,12 +39,7 @@ export default function App() {
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </main>
-
-            <VoiceInspectionAssistant
-              isOpen={showVoiceAssistant}
-              onClose={() => setShowVoiceAssistant(false)}
-            />
-
+            <VoiceInspectionAssistant isOpen={showVoiceAssistant} onClose={() => setShowVoiceAssistant(false)} />
             <Footer />
           </div>
         </BrowserRouter>
