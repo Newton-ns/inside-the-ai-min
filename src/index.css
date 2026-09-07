@@ -1,217 +1,185 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-950: #030712;
-  --color-navy-900: #070B14;
-  --color-navy-850: #0B1120;
-  --color-navy-800: #0F172A;
-  --color-navy-700: #1E293B;
-  --color-navy-600: #334155;
-
-  --color-cyber-cyan: #00F0FF;
-  --color-cyber-blue: #3B82F6;
-  --color-cyber-indigo: #6366F1;
-  --color-cyber-purple: #A855F7;
-  --color-cyber-pink: #EC4899;
-  --color-cyber-amber: #F59E0B;
-  --color-cyber-emerald: #10B981;
-  --color-cyber-rose: #F43F5E;
-
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-navy-950: #050505;
+  --color-navy-900: #0a0a0a;
+  --color-navy-850: #101010;
+  --color-navy-800: #171717;
+  --color-navy-700: #262626;
+  --color-navy-600: #404040;
+  --color-cyber-cyan: #76b900;
+  --color-cyber-blue: #76b900;
+  --color-cyber-indigo: #76b900;
+  --color-cyber-purple: #a3d63c;
+  --color-cyber-pink: #a3d63c;
+  --color-cyber-amber: #d8ff80;
+  --color-cyber-emerald: #76b900;
+  --color-cyber-rose: #ff6b6b;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
 }
 
 :root {
-  --color-cyan: 0, 240, 255;
-  --color-blue: 59, 130, 246;
-  --color-purple: 168, 85, 247;
+  --accent: #76b900;
+  --accent-soft: rgba(118,185,0,.12);
+  --accent-border: rgba(118,185,0,.42);
+  --surface: #101010;
+  --surface-2: #171717;
+  --border: rgba(255,255,255,.10);
+  --text-h: #f5f5f5;
+  --social-bg: #171717;
 }
 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  background-color: #030712;
-  color: #f1f5f9;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  margin: 0;
+  background: #050505;
+  color: #f5f5f5;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #070b14;
-}
-::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 240, 255, 0.2);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #334155;
-}
+::selection { background: rgba(118,185,0,.30); color: #fff; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #090909; }
+::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #76b900; }
 
-.glass-card {
-  background: rgba(11, 17, 32, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-}
+a { text-decoration: none; }
+button, a, select { -webkit-tap-highlight-color: transparent; }
 
-.glass-card-interactive {
-  background: rgba(11, 17, 32, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Premium surfaces: restrained rather than glass-heavy. */
+.glass-card,
+.glass-card-interactive,
+.glass-card-glow,
+.gov-card {
+  background: #101010;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: 0 12px 40px rgba(0,0,0,.30);
 }
+.glass-card-interactive { transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; }
 .glass-card-interactive:hover {
-  border-color: rgba(0, 240, 255, 0.35);
-  box-shadow: 0 12px 40px 0 rgba(0, 240, 255, 0.12), inset 0 0 0 1px rgba(0, 240, 255, 0.2);
-  transform: translateY(-2px);
+  border-color: rgba(118,185,0,.45);
+  box-shadow: 0 18px 50px rgba(0,0,0,.45);
+  transform: translateY(-3px);
 }
+.glass-card-glow { border-color: rgba(118,185,0,.32); box-shadow: 0 0 0 1px rgba(118,185,0,.04), 0 18px 60px rgba(0,0,0,.45); }
 
-.glass-card-glow {
-  background: rgba(11, 17, 32, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 240, 255, 0.3);
-  box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.2), inset 0 0 15px rgba(0, 240, 255, 0.08);
-}
-
-.text-glow-cyan {
-  text-shadow: 0 0 12px rgba(0, 240, 255, 0.6), 0 0 24px rgba(0, 240, 255, 0.3);
-}
-
-.text-glow-purple {
-  text-shadow: 0 0 12px rgba(168, 85, 247, 0.6), 0 0 24px rgba(168, 85, 247, 0.3);
-}
-
+.text-glow-cyan, .text-glow-purple { text-shadow: none; }
 .grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-image: linear-gradient(to right, rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
 }
 
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(1000%); }
+/* Classic hero atmosphere inspired by premium GPU/product pages. */
+main > div:first-child > section:first-child {
+  position: relative;
+  isolation: isolate;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: radial-gradient(ellipse at 72% 45%, rgba(118,185,0,.16) 0%, rgba(118,185,0,.045) 22%, transparent 48%), linear-gradient(115deg, #050505 0%, #080808 48%, #111 100%);
+}
+main > div:first-child > section:first-child::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 72%;
+  height: 220%;
+  right: -12%;
+  top: -60%;
+  opacity: .34;
+  transform: rotate(-16deg);
+  background: repeating-linear-gradient(174deg, transparent 0 24px, rgba(118,185,0,.34) 25px, transparent 27px 48px);
+  mask-image: linear-gradient(to left, #000 0%, transparent 82%);
+}
+main > div:first-child > section:first-child::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(90deg, #050505 0%, rgba(5,5,5,.86) 32%, rgba(5,5,5,.16) 68%, rgba(5,5,5,.35) 100%);
+  pointer-events: none;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
+/* Reduce rounded, app-like feel and make cards more product-site-like. */
+main .rounded-3xl { border-radius: 4px; }
+main .rounded-2xl { border-radius: 3px; }
+main .rounded-xl { border-radius: 3px; }
+main .rounded-full { border-radius: 999px; }
+main .shadow-xl { box-shadow: 0 14px 36px rgba(0,0,0,.35); }
 
-.animate-scanline {
-  animation: scanline 2.5s linear infinite;
-}
+/* Common Tailwind color overrides for a unified green/neutral identity. */
+main .text-blue-400, main .text-indigo-400 { color: #8fc52e !important; }
+main .text-emerald-400 { color: #9bd33f !important; }
+main .text-amber-400 { color: #d8ff80 !important; }
+main .border-blue-500\/40, main .border-blue-500\/30 { border-color: rgba(118,185,0,.42) !important; }
+main .bg-blue-600 { background-color: #76b900 !important; }
+main .hover\:bg-blue-500:hover { background-color: #8dcc00 !important; }
 
-.animate-float {
-  animation: float 4s ease-in-out infinite;
-}
+/* Smooth reveal and hover language. */
+main > div:first-child > section { animation: section-in .55s ease both; }
+main > div:first-child > section:nth-child(2) { animation-delay: .06s; }
+main > div:first-child > section:nth-child(3) { animation-delay: .12s; }
+@keyframes section-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ── Legal Metrology UI Utilities ──────────────────────────────── */
+@keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(1000%); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.animate-scanline { animation: scanline 2.5s linear infinite; }
+.animate-float { animation: float 4s ease-in-out infinite; }
 
-/* AI Scan Pulse Ring */
 @keyframes scan-ring {
-  0%   { transform: scale(0.85); opacity: 0.9; box-shadow: 0 0 0 0 rgba(59,130,246,0.6); }
-  70%  { transform: scale(1);    opacity: 0;   box-shadow: 0 0 0 20px rgba(59,130,246,0); }
-  100% { transform: scale(0.85); opacity: 0; }
+  0% { transform: scale(.85); opacity: .9; box-shadow: 0 0 0 0 rgba(118,185,0,.55); }
+  70% { transform: scale(1); opacity: 0; box-shadow: 0 0 0 20px rgba(118,185,0,0); }
+  100% { transform: scale(.85); opacity: 0; }
 }
 .animate-scan-ring { animation: scan-ring 1.4s ease-out infinite; }
 
-/* Skeleton shimmer for loading states */
-@keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position:  200% 0; }
-}
-.skeleton {
-  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.6s infinite;
-  border-radius: 8px;
-}
-
-/* Violation card shake on reveal */
-@keyframes violation-shake {
-  0%, 100% { transform: translateX(0); }
-  15%       { transform: translateX(-4px); }
-  45%       { transform: translateX(4px); }
-  75%       { transform: translateX(-2px); }
-}
-.violation-reveal { animation: violation-shake 0.45s ease-out; }
-
-/* Progress bar fill */
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.skeleton { background: linear-gradient(90deg,#1a1a1a 25%,#303030 50%,#1a1a1a 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite; border-radius: 3px; }
+@keyframes violation-shake { 0%,100% { transform: translateX(0); } 15% { transform: translateX(-4px); } 45% { transform: translateX(4px); } 75% { transform: translateX(-2px); } }
+.violation-reveal { animation: violation-shake .45s ease-out; }
 @keyframes bar-fill { from { width: 0%; } }
-.bar-fill { animation: bar-fill 1s cubic-bezier(0.34,1.56,0.64,1) forwards; }
-
-/* Bounding Box active flicker */
-@keyframes bbox-flicker {
-  0%,90%,100% { opacity: 1; }
-  92%          { opacity: 0.4; }
-  96%          { opacity: 0.8; }
-}
+.bar-fill { animation: bar-fill 1s cubic-bezier(.34,1.56,.64,1) forwards; }
+@keyframes bbox-flicker { 0%,90%,100% { opacity: 1; } 92% { opacity: .4; } 96% { opacity: .8; } }
 .bbox-active { animation: bbox-flicker 3s infinite; }
-
-/* Gov-badge pulse */
-@keyframes gov-pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.6; }
-}
+@keyframes gov-pulse { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
 .gov-badge-pulse { animation: gov-pulse 2s ease-in-out infinite; }
+@keyframes slide-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.slide-up { animation: slide-up .4s ease-out both; }
 
-/* Slide-up reveal */
-@keyframes slide-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+.gov-tag { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; padding:2px 8px; border-radius:3px; }
+.rule-pass { background:rgba(118,185,0,.12); color:#a9df4a; border:1px solid rgba(118,185,0,.3); }
+.rule-fail { background:rgba(244,63,94,.12); color:#fb7185; border:1px solid rgba(244,63,94,.3); }
+.rule-warn { background:rgba(216,255,128,.10); color:#d8ff80; border:1px solid rgba(216,255,128,.25); }
+.status-pass { background:#142000; border:1px solid #76b900; color:#b7e66a; }
+.status-partial { background:#251f00; border:1px solid #a59a00; color:#e1d85b; }
+.status-fail { background:#300b12; border:1px solid #dc2626; color:#f87171; }
+.conf-bar-track { background:#272727; height:6px; border-radius:999px; overflow:hidden; }
+.conf-bar-fill { height:6px; border-radius:999px; transition:width 1s ease; }
+
+@media (max-width: 768px) {
+  main > div:first-child > section:first-child { min-height: 500px; }
+  main > div:first-child > section:first-child::before { width:110%; right:-42%; opacity:.22; }
 }
-.slide-up { animation: slide-up 0.4s ease-out both; }
 
-/* ── Print Styles for Certificates & Notices ───────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
+
 @media print {
-  body { background: white !important; color: #111827 !important; font-size: 12pt; }
-  .no-print, header, footer, nav, button { display: none !important; }
-  .print-block { display: block !important; }
-  .print-page-break { page-break-after: always; }
-  .certificate-print {
-    border: 6px double #b45309 !important;
-    background: white !important; color: #111827 !important;
-    padding: 40px !important; max-width: 800px; margin: 0 auto;
-  }
-  .certificate-print .cert-title {
-    font-size: 18pt; font-weight: bold; text-align: center;
-    text-transform: uppercase; letter-spacing: 2pt;
-  }
-  .notice-print { background: white !important; color: #111827 !important; padding: 32px !important; }
-  .notice-print .notice-heading {
-    text-align: center; font-size: 16pt; font-weight: bold;
-    text-transform: uppercase; border-bottom: 2px solid #374151;
-    padding-bottom: 8pt; margin-bottom: 16pt;
-  }
+  body { background:white !important; color:#111827 !important; font-size:12pt; }
+  .no-print, header, footer, nav, button { display:none !important; }
+  .print-block { display:block !important; }
+  .print-page-break { page-break-after:always; }
+  .certificate-print { border:6px double #b45309 !important; background:white !important; color:#111827 !important; padding:40px !important; max-width:800px; margin:0 auto; }
+  .certificate-print .cert-title { font-size:18pt; font-weight:bold; text-align:center; text-transform:uppercase; letter-spacing:2pt; }
+  .notice-print { background:white !important; color:#111827 !important; padding:32px !important; }
+  .notice-print .notice-heading { text-align:center; font-size:16pt; font-weight:bold; text-transform:uppercase; border-bottom:2px solid #374151; padding-bottom:8pt; margin-bottom:16pt; }
 }
-
-/* ── Gov-tech Design Tokens ────────────────────────────────────── */
-.gov-card {
-  background: rgba(15,23,42,0.9);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 1.25rem;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
-}
-.gov-tag {
-  font-size: 0.65rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  padding: 2px 8px; border-radius: 4px;
-}
-.rule-pass   { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
-.rule-fail   { background: rgba(244,63,94,0.15);  color: #fb7185; border: 1px solid rgba(244,63,94,0.3); }
-.rule-warn   { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
-.status-pass    { background: #052e16; border: 1px solid #16a34a; color: #4ade80; }
-.status-partial { background: #451a03; border: 1px solid #d97706; color: #fbbf24; }
-.status-fail    { background: #4c0519; border: 1px solid #dc2626; color: #f87171; }
-.conf-bar-track { background: #1e293b; height: 6px; border-radius: 999px; overflow: hidden; }
-.conf-bar-fill  { height: 6px; border-radius: 999px; transition: width 1s ease; }
-
