@@ -1,0 +1,95 @@
+/* Premium classic light theme — clean white, navy typography, restrained green */
+.theme-light{background:#f7f9fc!important;color:#162b49!important}
+.theme-light .classic-home{background:#f7f9fc!important;color:#162b49!important}
+.theme-light .classic-hero{min-height:590px!important;background:linear-gradient(135deg,#fbfdff 0%,#f5f9fc 58%,#edf7ef 100%)!important;border-bottom:1px solid #dce5ec!important}
+.theme-light .classic-hero:after{background:linear-gradient(90deg,rgba(251,253,255,.98) 0%,rgba(251,253,255,.92) 42%,rgba(251,253,255,.55) 72%,rgba(237,247,239,.3) 100%)!important}
+.theme-light .classic-hero-lines{opacity:.08!important}
+.theme-light .classic-hero-copy{color:#162b49!important}
+.theme-light .classic-eyebrow{color:#536a83!important}
+.theme-light .classic-eyebrow span{background:#18a957!important}
+.theme-light .classic-hero h1{color:#122947!important;text-shadow:none!important}
+.theme-light .classic-hero h1 span{color:#19a957!important}
+.theme-light .classic-hero-copy>p{color:#536b87!important}
+.theme-light .classic-hero-note{color:#60758b!important}
+.theme-light .classic-hero-note svg{color:#18a957!important}
+.theme-light .classic-primary{background:#16a957!important;border-color:#16a957!important;color:#fff!important}
+.theme-light .classic-primary:hover{background:#118f4a!important}
+.theme-light .classic-secondary{background:#fff!important;border-color:#cbd8e3!important;color:#193453!important;box-shadow:0 2px 8px rgba(24,48,75,.05)!important}
+.theme-light .classic-secondary:hover{background:#f4f8fb!important;border-color:#9eb2c5!important}
+.theme-light .classic-hero-panel{background:#fff!important;border:1px solid #d7e1e9!important;box-shadow:0 16px 40px rgba(29,55,80,.10)!important}
+.theme-light .classic-panel-top,.theme-light .classic-panel-footer{color:#667b90!important;border-color:#e0e7ed!important}
+.theme-light .classic-scan-frame{background:linear-gradient(145deg,#fbfdfc,#f0f8f3)!important;border-color:#cfe0d7!important;color:#16a957!important}
+.theme-light .scan-line{background:#16a957!important;box-shadow:0 0 10px rgba(22,169,87,.28)!important}
+.theme-light .scan-corner{border-color:#16a957!important}
+.theme-light .classic-panel-footer strong,.theme-light .live{color:#16a957!important}
+.theme-light .classic-metrics{background:#fff!important;border-bottom:1px solid #dce5ec!important}
+.theme-light .metric-grid>div{border-color:#e1e7ec!important}
+.theme-light .metric-grid strong{color:#193453!important}
+.theme-light .metric-grid span{color:#6a7e91!important}
+.theme-light .classic-section{background:#f7f9fc!important}
+.theme-light .classic-heading>span{color:#14994e!important}
+.theme-light .classic-heading h2{color:#162f4e!important}
+.theme-light .classic-heading p{color:#60758b!important}
+.theme-light .portal-grid,.theme-light .capability-grid{border-color:#d8e2e9!important}
+.theme-light .portal-card{background:#fff!important;color:#1a3554!important;border-color:#d8e2e9!important;box-shadow:0 2px 8px rgba(26,53,84,.03)!important}
+.theme-light .portal-card:hover{background:#f9fcfa!important;box-shadow:0 10px 24px rgba(26,53,84,.07)!important}
+.theme-light .portal-number{color:#a1afbb!important}
+.theme-light .portal-icon{background:#edf8f1!important;border-color:#d1eadb!important;color:#16a957!important}
+.theme-light .portal-card h3{color:#193453!important}
+.theme-light .portal-card p{color:#687d91!important}
+.theme-light .portal-card span,.theme-light .text-link{color:#159b50!important}
+.theme-light .classic-feature-band{background:#fff!important;border-color:#dce5ec!important}
+.theme-light .flow-list,.theme-light .flow-row{border-color:#dce5ec!important}
+.theme-light .flow-row{color:#29435f!important}
+.theme-light .flow-row b{color:#159b50!important}
+.theme-light .flow-row svg{color:#8293a2!important}
+.theme-light .capability{background:#fff!important;border-color:#d8e2e9!important}
+.theme-light .capability svg{color:#159b50!important}
+.theme-light .capability h3{color:#1c3857!important}
+.theme-light .capability p{color:#687d91!important}
+.theme-light .compliance-section{border-color:#dce5ec!important}
+.theme-light .check-list,.theme-light .check-list>div{border-color:#dce5ec!important}
+.theme-light .check-list>div{color:#38516c!important}
+.theme-light .check-list svg{color:#159b50!important}
+.theme-light .classic-cta{background:#fff!important;border-color:#dce5ec!important}
+.theme-light .cta-inner>div>span{color:#159b50!important}
+.theme-light .cta-inner h2{color:#193453!important}
+.theme-light .cta-inner p{color:#687d91!important}
+/* Navigation and controls: crisp readable contrast */
+.theme-light .classic-links a{color:#60758b!important}
+.theme-light .classic-links a:hover,.theme-light .classic-links a.active{color:#193453!important}
+.theme-light .classic-links a.active:after{background:#159b50!important}
+.theme-light .classic-brand-name{color:#142d4a!important}
+.theme-light .classic-brand-name span{color:#159b50!important}
+.theme-light .classic-brand-sub{color:#6f8192!important}
+.theme-light .classic-theme-toggle,.theme-light .classic-voice,.theme-light .classic-role{background:#fff!important;border-color:#d3dee7!important;color:#203b59!important}
+.theme-light .classic-role select{background:#fff!important;color:#203b59!important}
+.theme-light .classic-sectionbar{background:#f1f5f7!important;border-color:#dce5ec!important}
+.theme-light .classic-sectionbar-inner{color:#60758b!important}
+.theme-light .classic-govbar{background:#101c2b!important;color:#b7c3cf!important}
+.theme-light .classic-govbar .classic-code{color:#54d47d!important}
+.theme-light .classic-govbar .classic-status{color:#b7c3cf!important}
+.theme-light .classic-language select{color:#dbe4ec!important}
+/* Internal pages */
+.theme-light .classic-internal-page{background:#f7f9fc!important;color:#162b49!important}
+.theme-light .classic-page-intro h1{color:#122947!important}
+.theme-light .classic-page-intro p{color:#536b87!important}
+.theme-light .classic-rule-toolbar,.theme-light .classic-calculator,.theme-light .classic-rules-list,.theme-light .classic-list-head,.theme-light .classic-rule-row,.theme-light .classic-verify-search,.theme-light .classic-certificate-title,.theme-light .classic-metadata>div{border-color:#d9e2e9!important}
+.theme-light .classic-search-field{background:#fff!important;border-color:#cbd8e2!important;color:#1d3957!important}
+.theme-light .classic-search-field input{color:#1d3957!important}
+.theme-light .classic-calculator-grid{background:#d9e2e9!important;border-color:#d9e2e9!important}
+.theme-light .classic-calculator-grid label{background:#fff!important;color:#60758b!important}
+.theme-light .classic-calculator-grid input,.theme-light .classic-calculator-grid select{background:#fff!important;color:#1d3957!important;border-color:#cbd8e2!important}
+.theme-light .classic-calculator-result{background:#eef8f2!important;border-left-color:#159b50!important}
+.theme-light .classic-calculator-result strong,.theme-light .classic-rule-number,.theme-light .classic-rule-tag svg{color:#159b50!important}
+.theme-light .classic-rule-main h3{color:#193453!important}
+.theme-light .classic-rule-main p,.theme-light .classic-rule-penalty,.theme-light .classic-rule-tag{color:#687d91!important}
+.theme-light .classic-certificate{background:#fff!important;border-color:#d4dfe7!important;box-shadow:0 8px 24px rgba(26,53,84,.05)!important}
+.theme-light .classic-certificate-top,.theme-light .classic-signature{border-color:#d9e2e9!important}
+.theme-light .classic-status strong,.theme-light .classic-certificate-title h2,.theme-light .classic-metadata strong{color:#193453!important}
+.theme-light .classic-certificate-title span,.theme-light .classic-metadata .mono{color:#159b50!important}
+.theme-light .classic-certificate-title p,.theme-light .classic-metadata span{color:#687d91!important}
+.theme-light .classic-signature{background:#f3f6f8!important}
+.theme-light .classic-signature code{color:#60758b!important}
+.theme-light .classic-not-found{background:#fff7f6!important}
+@media(max-width:800px){.theme-light .classic-hero{min-height:auto!important}.theme-light .classic-hero-grid{min-height:auto!important}}
