@@ -13,6 +13,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenVoiceAssistant, theme = 'd
   const location = useLocation();
 
   const navLinks = [
+    { to: '/', label: 'Overview' },
     { to: '/scanner', label: 'AI Label Scanner' },
     { to: '/rules', label: 'Statutory Rules 2011' },
     { to: '/verify', label: 'Verify Certificate' },
@@ -41,7 +42,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenVoiceAssistant, theme = 'd
 
           <nav className="classic-links" aria-label="Primary navigation">
             {navLinks.map((link) => {
-              const active = location.pathname === link.to || (link.to === '/verify' && location.pathname.startsWith('/verify/'));
+              const active = link.to === '/'
+                ? location.pathname === '/'
+                : location.pathname === link.to || (link.to === '/verify' && location.pathname.startsWith('/verify/'));
               return <Link key={link.to} to={link.to} className={active ? 'active' : ''}>{link.label}</Link>;
             })}
           </nav>
