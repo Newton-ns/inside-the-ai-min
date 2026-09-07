@@ -2,20 +2,19 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
-import { UserCircle, Mic, Globe, Scale, Sun, Moon } from 'lucide-react';
+import { UserCircle, Mic, Globe, Scale, Sun, Moon, ChevronDown } from 'lucide-react';
 import { UserRole } from '../../types';
 
 interface HeaderProps { onOpenVoiceAssistant?: () => void; theme?: 'dark' | 'light'; onToggleTheme?: () => void; }
 
 export const Header: React.FC<HeaderProps> = ({ onOpenVoiceAssistant, theme = 'dark', onToggleTheme }) => {
   const { currentUser, switchRole } = useAuth();
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
   const navLinks = [
-    { to: '/', label: 'Overview' },
-    { to: '/scanner', label: t.nav.scanner },
-    { to: '/rules', label: t.nav.rulesCatalog },
+    { to: '/scanner', label: 'AI Label Scanner' },
+    { to: '/rules', label: 'Statutory Rules 2011' },
     { to: '/verify', label: 'Verify Certificate' },
   ];
 
@@ -24,10 +23,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenVoiceAssistant, theme = 'd
       <div className="classic-govbar">
         <div className="classic-container classic-govbar-inner">
           <div className="classic-gov-left">
-            <span className="classic-code">SIH-26034</span><span className="classic-dot">•</span><span>{t.ministry}</span><span className="classic-dot">•</span><span>{t.govIndia}</span>
+            <span className="classic-code">SIH-26034</span><span className="classic-dot">•</span><span>Government Compliance Platform</span><span className="classic-dot">•</span><span>Government of India</span>
           </div>
           <div className="classic-gov-right">
-            <span className="classic-status"><span className="classic-status-dot" /> Compliance engine active</span>
+            <span className="classic-status"><span className="classic-status-dot" /> System Active</span>
             <div className="classic-language"><Globe size={13} /><select value={language} onChange={(e) => setLanguage(e.target.value as any)} aria-label="Language"><option value="en">English</option><option value="hi">हिन्दी</option><option value="ta">தமிழ்</option></select></div>
           </div>
         </div>
@@ -52,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenVoiceAssistant, theme = 'd
               {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}<span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
             </button>
             <button onClick={onOpenVoiceAssistant} className="classic-voice" title="Open AI Voice Assistant"><Mic size={15} /><span>Voice AI</span></button>
-            <div className="classic-role"><UserCircle size={16} /><select value={currentUser.role} onChange={(e) => switchRole(e.target.value as UserRole)} aria-label="Current role"><option value="inspector">Officer</option><option value="manufacturer">Manufacturer</option><option value="admin">Administrator</option><option value="consumer">Consumer</option></select></div>
+            <div className="classic-role"><UserCircle size={16} /><select value={currentUser.role} onChange={(e) => switchRole(e.target.value as UserRole)} aria-label="Current role"><option value="inspector">Officer</option><option value="manufacturer">Manufacturer</option><option value="admin">Administrator</option><option value="consumer">Consumer</option></select><ChevronDown size={12}/></div>
           </div>
         </div>
       </div>
