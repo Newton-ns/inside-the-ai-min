@@ -1,0 +1,205 @@
+/* High-contrast classic light mode overrides */
+.theme-light,
+.theme-light .classic-home,
+.theme-light main {
+  background:#ffffff !important;
+  color:#15253d !important;
+}
+
+/* Make every important light-mode heading dark and crisp */
+.theme-light h1,
+.theme-light h2,
+.theme-light h3,
+.theme-light h4,
+.theme-light h5,
+.theme-light h6,
+.theme-light strong,
+.theme-light b {
+  color:#142844 !important;
+  opacity:1 !important;
+}
+
+.theme-light p,
+.theme-light li,
+.theme-light label,
+.theme-light span,
+.theme-light div {
+  opacity:1;
+}
+
+/* Landing / Overview */
+.theme-light .classic-hero {
+  background:#f8fafc !important;
+  border-bottom:1px solid #d9e1ea !important;
+}
+.theme-light .classic-hero:after {
+  background:linear-gradient(90deg,rgba(248,250,252,.98),rgba(248,250,252,.94),rgba(248,250,252,.72)) !important;
+}
+.theme-light .classic-hero h1 {
+  color:#102a4a !important;
+  text-shadow:none !important;
+}
+.theme-light .classic-hero-copy>p {
+  color:#405a78 !important;
+}
+.theme-light .classic-eyebrow,
+.theme-light .classic-heading>span,
+.theme-light .classic-section-kicker {
+  color:#16833a !important;
+}
+.theme-light .classic-hero-note {
+  color:#50657b !important;
+}
+.theme-light .classic-secondary {
+  color:#18314d !important;
+  background:#fff !important;
+  border-color:#b9c7d5 !important;
+}
+.theme-light .classic-panel-top,
+.theme-light .classic-panel-footer {
+  color:#53667b !important;
+}
+.theme-light .classic-panel-top strong,
+.theme-light .classic-panel-footer strong {
+  color:#16833a !important;
+}
+.theme-light .classic-metrics {
+  background:#f4f7fa !important;
+  border-color:#d8e0e8 !important;
+}
+.theme-light .metric-grid strong {
+  color:#142844 !important;
+}
+.theme-light .metric-grid span {
+  color:#53677d !important;
+}
+.theme-light .classic-section {
+  background:#fff !important;
+}
+.theme-light .classic-heading h2 {
+  color:#142844 !important;
+}
+.theme-light .classic-heading p {
+  color:#526982 !important;
+}
+.theme-light .portal-card {
+  color:#142844 !important;
+  background:#fff !important;
+  border-color:#d0dae4 !important;
+}
+.theme-light .portal-card:hover {
+  background:#f5f9f6 !important;
+}
+.theme-light .portal-card p {
+  color:#536982 !important;
+}
+.theme-light .portal-number {
+  color:#8090a0 !important;
+}
+.theme-light .capability {
+  background:#fff !important;
+  color:#142844 !important;
+  border-color:#d0dae4 !important;
+}
+.theme-light .capability p {
+  color:#536982 !important;
+}
+.theme-light .flow-row {
+  color:#263e59 !important;
+  border-color:#d4dde6 !important;
+}
+.theme-light .flow-row svg {
+  color:#61758a !important;
+}
+.theme-light .check-list>div {
+  color:#334d69 !important;
+  border-color:#d4dde6 !important;
+}
+.theme-light .classic-feature-band,
+.theme-light .classic-cta {
+  background:#f5f8fa !important;
+  border-color:#d6dfe7 !important;
+}
+.theme-light .cta-inner h2 {
+  color:#142844 !important;
+}
+.theme-light .cta-inner p {
+  color:#536982 !important;
+}
+
+/* Scanner / Rules / Verify: force readable text even when old Tailwind classes win */
+.theme-light .classic-internal-page,
+.theme-light .classic-scanner-page,
+.theme-light .classic-rules-page,
+.theme-light .classic-verify-page {
+  color:#142844 !important;
+}
+.theme-light .classic-internal-page h1,
+.theme-light .classic-internal-page h2,
+.theme-light .classic-internal-page h3,
+.theme-light .classic-scanner-page h1,
+.theme-light .classic-scanner-page h2,
+.theme-light .classic-scanner-page h3,
+.theme-light .classic-rules-page h1,
+.theme-light .classic-rules-page h2,
+.theme-light .classic-rules-page h3,
+.theme-light .classic-verify-page h1,
+.theme-light .classic-verify-page h2,
+.theme-light .classic-verify-page h3 {
+  color:#142844 !important;
+}
+.theme-light .classic-internal-page p,
+.theme-light .classic-scanner-page p,
+.theme-light .classic-rules-page p,
+.theme-light .classic-verify-page p {
+  color:#526982 !important;
+}
+.theme-light .classic-scanner-page .text-white,
+.theme-light .classic-scanner-page .text-slate-100,
+.theme-light .classic-scanner-page .text-slate-200,
+.theme-light .classic-scanner-page .text-slate-300 {
+  color:#1b334f !important;
+}
+.theme-light .classic-scanner-page .text-slate-400,
+.theme-light .classic-scanner-page .text-slate-500 {
+  color:#5c7187 !important;
+}
+.theme-light .classic-rule-main h3,
+.theme-light .classic-rule-toolbar h2,
+.theme-light .classic-section-heading h2,
+.theme-light .classic-verify-search h2,
+.theme-light .classic-certificate-title h2,
+.theme-light .classic-metadata strong,
+.theme-light .classic-status strong {
+  color:#142844 !important;
+}
+.theme-light .classic-rule-main p,
+.theme-light .classic-rule-penalty,
+.theme-light .classic-rule-tag,
+.theme-light .classic-certificate-title p,
+.theme-light .classic-metadata span,
+.theme-light .classic-back-link {
+  color:#526982 !important;
+}
+
+/* Header text */
+.theme-light .classic-links a,
+.theme-light .classic-role,
+.theme-light .classic-role select,
+.theme-light .classic-theme-toggle,
+.theme-light .classic-voice {
+  color:#203954 !important;
+}
+.theme-light .classic-links a:hover,
+.theme-light .classic-links a.active {
+  color:#102a4a !important;
+}
+.theme-light .classic-brand-name {
+  color:#102a4a !important;
+}
+.theme-light .classic-brand-sub {
+  color:#5e7082 !important;
+}
+.theme-light .classic-sectionbar-inner {
+  color:#50657b !important;
+}
