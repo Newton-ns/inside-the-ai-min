@@ -8,6 +8,7 @@ import { VoiceInspectionAssistant } from './components/voice/VoiceInspectionAssi
 import './classic.css';
 import './classic-pages.css';
 import './classic-light.css';
+import './light-mode.css';
 
 import { LandingPage } from './pages/LandingPage';
 import { ScannerPage } from './pages/ScannerPage';
