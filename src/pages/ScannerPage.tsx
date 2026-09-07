@@ -15,7 +15,12 @@ export const ScannerPage: React.FC = () => {
   };
 
   return (
-    <div className="py-4 space-y-8">
+    <div className="classic-internal-page classic-scanner-page">
+      <div className="classic-page-intro">
+        <span className="classic-eyebrow">AI INSPECTION / 01</span>
+        <h1>AI Label Scanner</h1>
+        <p>Inspect packaged commodity labels against Legal Metrology requirements with a clear, guided workflow.</p>
+      </div>
       {scanResult ? (
         <ComplianceReportView
           result={scanResult.result}
