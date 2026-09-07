@@ -6,6 +6,7 @@ import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { VoiceInspectionAssistant } from './components/voice/VoiceInspectionAssistant';
 import './classic.css';
+import './classic-pages.css';
 
 import { LandingPage } from './pages/LandingPage';
 import { ScannerPage } from './pages/ScannerPage';
